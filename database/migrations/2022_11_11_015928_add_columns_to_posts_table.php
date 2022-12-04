@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::table('posts', function (Blueprint $table) {
             $table->longText('description')->nullable()->change();
+            $table->integer('author');
             $table->foreignId('category_id')->constrained('categories')->cascadeOnDelete()->cascadeOnUpdate();
         });
     }
